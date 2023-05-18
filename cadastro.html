@@ -30,26 +30,24 @@
         <p>CADASTRO</p>
         </div>
         <br>
-    <form action="entrar.html">
-        <label for="inome">Nome:</label>
-       
+
+    <div class="mensagem"></div>
+    <form action="entrar.html" id="formulario">
+
+    <label for="inome">Nome:</label>
     <input id="inome" name="txtnome" type="text">
+    
+    <label for="idate">Data de Nascimento:</label>
+    <input id="idate" type="date" name="txtdatanascimento" typt="text">
        
-    <label for="isenha">Data de Nascimento:</label>
-       
-    <input type="date" name="txtdatanascimento" typt="text">
-       
-   <label for="ilogin">E-mail:</label>
-      
+   <label for="iemail">E-mail:</label>
    <input id="iemail" name="txtemail" type="text">
        
    <label for="isenha">Senha:</label>
-      
    <input id="isenha" name="psenha" type="password">
        
-   <label for="isenha">Confirmar Senha:</label>
-      
-   <input id="isenha" name="psenha" type="password">
+   <label for="iconfirsenha">Confirmar Senha:</label>
+   <input id="iconfirsenha" name="psenha" type="password">
 
    <input type="submit" value="Cadastrar">
 
