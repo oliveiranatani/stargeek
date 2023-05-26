@@ -1,5 +1,9 @@
-
+const botaomodal = document.getElementById("btn");
 const cards = document.querySelector(".cards");
+const formulario = document.getElementById("formulario");
+const nome = document.getElementById("nome");
+const descricao = document.getElementById("descricao");
+const foto = document.getElementById("foto");
 
 
 carregarCatalogo();
@@ -28,6 +32,11 @@ function carregarCatalogo() {
         `
         cards.appendChild(divcard);
     })
+}
+
+function editar(indice) {
+    var url ="caditem.html?peditar=true&indice="+ encodeURIComponent(indice);
+    window.location.href = url;
 }
 
 function excluir(indice){
