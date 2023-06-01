@@ -27,17 +27,17 @@ header {
 
 .cadastro{
     grid-area: i;
-   background-image: url(image\ 7cadastro-foto.png); 
-
+   background-image: url(img\ caditem.jpeg); 
 }
 
 main{
     grid-area: m;
+    min-height: 600px;
     background-color: #D9D9D9;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     padding: 30px;
 }
 
@@ -70,4 +70,8 @@ form > input[type="submit"] {
         "i";
     }
     
+}
+
+msg {
+    color: red;
 }

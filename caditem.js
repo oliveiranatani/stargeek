@@ -7,6 +7,11 @@ var url = new URL(window.location.href);
 var peditar = url.searchParams.get("peditar");
 var pindice = url.searchParams.get("indice");
 
+
+var emaillogado;
+femailLogado();
+
+
 if (peditar == "true"){
   editar(pindice);
 }
@@ -23,7 +28,8 @@ botaocadastrar.onclick = (evento)=>{
                                       {
                                         nome: nome.value,
                                         descricao: descricao.value,
-                                        foto: nomeArq
+                                        foto: nomeArq,
+                                        email: emaillogado
                                         }
                                      )
                         localStorage.setItem("catalogo", JSON.stringify(dados));
@@ -76,6 +82,7 @@ function salvaEdicao(pfoto){
   dados[pindice].nome = nome.value;
   dados[pindice].descricao = descricao.value;
   dados[pindice].foto = pfoto;
+  dados[pindice].email = emaillogado;
   localStorage.setItem("catalogo", JSON.stringify(dados));
   window.location.assign("catalago.html");
 
@@ -109,4 +116,13 @@ async function fenvio() {
         console.error(error);
         return false;
       }
+}
+
+function femailLogado(){
+  let dados = sessionStorage.getItem("logado");
+  if (dados == null) {
+      window.location.assign("entrar.html");
+  } else{
+      emaillogado = dados;
+  }
 }

@@ -23,11 +23,13 @@ header{
      padding: 20px 40px;
      justify-content: space-between;
      display: flex;
+     padding: 15px;
 }
 
 main{
     grid-area: m;
     background-color: #D9D9D9;
+    min-height: 400px;
 }
 
 .barra{
@@ -35,7 +37,7 @@ main{
     width: 165px;
     height: 47px;
     border-radius: 15px;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     text-align: center;
     padding: 5px;
     
@@ -52,7 +54,7 @@ main{
     width: 320px;
     height: 47px;
     border-radius: 15px;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     text-align: center;
     padding: 5px;
 }
@@ -83,7 +85,6 @@ main{
     width: 100%;
     padding-top: 10px;
     background-color: white; 
-   
 }
 
 .botao{

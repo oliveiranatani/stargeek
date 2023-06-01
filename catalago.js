@@ -4,7 +4,10 @@ const formulario = document.getElementById("formulario");
 const nome = document.getElementById("nome");
 const descricao = document.getElementById("descricao");
 const foto = document.getElementById("foto");
+const botao = document.getElementById("logout");
 
+var emaillogado;
+femailLogado();
 
 carregarCatalogo();
 
@@ -18,7 +21,8 @@ function carregarCatalogo() {
     } 
 
     dados.forEach((elemento,indice) => {
-        let divcard = document.createElement("div");
+        if (elemento.email == emaillogado){
+            let divcard = document.createElement("div");
         divcard.setAttribute("class", "card");
         divcard.innerHTML = `
         <div class="cardimagem"><img src="img/${elemento.foto}"></div>
@@ -30,7 +34,8 @@ function carregarCatalogo() {
         <div class="excluir"><i class="bi bi-trash3-fill" onclick="excluir(${indice})"></i></div>
         </div>
         `
-        cards.appendChild(divcard);
+        cards.appendChild(divcard);}
+        
     })
 }
 
@@ -46,4 +51,18 @@ function excluir(indice){
     localStorage.setItem("catalogo", JSON.stringify(dados));
     window.location.reload();
     }  
+}
+
+function femailLogado(){
+    let dados = sessionStorage.getItem("logado");
+    if (dados == null) {
+        window.location.assign("entrar.html");
+    } else{
+        emaillogado = dados;
+    }
+}
+
+botao.onclick = () => {
+    sessionStorage.removeItem("logado");
+    window.location.assign("index.html");
 }
